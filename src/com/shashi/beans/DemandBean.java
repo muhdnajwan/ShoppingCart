@@ -5,7 +5,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class DemandBean implements Serializable {
 
-	private String user;
+	private String userName;
 	private String prodId;
 	private int demandQty;
 
