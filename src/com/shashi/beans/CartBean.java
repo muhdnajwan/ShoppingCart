@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class CartBean implements Serializable {
-	
+
+	public CartBean() {
+	}
+
 	public String userId;
 
 	public String prodId;
 
 	public int quantity; 
-
-	public CartBean() {
-	}
 	
 	public String getUserId() {
 		return userId;
