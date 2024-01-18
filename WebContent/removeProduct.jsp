@@ -47,15 +47,11 @@
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
 					<h3 style="color: green;">Product Deletion Form</h3>
-					<%
-					if (message != null) {
-					%>
-					<p style="color: blue;">
-						<%=message%>
-					</p>
-					<%
-					}
-					%>
+					<c:if test="${not empty message}">
+					    <p style="color: blue;">
+					        <c:out value="${message}" />
+					    </p>
+					</c:if>
 				</div>
 				<div></div>
 				<div class="row">
