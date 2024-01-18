@@ -24,7 +24,8 @@ public class OrderBean implements Serializable {
 		this.shipped = 0;
 	}
 
-	public OrderBean(String transactionId, String productId, int quantity, Double amount, int shipped) {
+	public OrderBean(String transactionId, String productId, int quantity, 
+			 Double amount, int shipped) {
 		super();
 		this.transactionId = transactionId;
 		this.productId = productId;
