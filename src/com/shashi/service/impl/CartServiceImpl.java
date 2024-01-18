@@ -41,9 +41,15 @@ public class CartServiceImpl implements CartService {
 				ProductBean product = new ProductServiceImpl().getProductDetails(prodId);
 
 				int availableQty = product.getProdQuantity();
+				int updatedQty = prodQty + cartQuantity;
 
-				prodQty += cartQuantity;
-				//
+			        if (availableQty < updatedQty) {
+				// Handle the case where the updated quantity exceeds the available quantity
+				// For example, display an error message, adjust quantities, etc.
+				} else {
+				    prodQty = updatedQty;
+				}
+				
 				if (availableQty < prodQty) {
 
 					status = updateProductToCart(userId, prodId, availableQty);
