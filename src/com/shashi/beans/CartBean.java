@@ -9,7 +9,7 @@ public class CartBean implements Serializable {
 
 	public String prodId;
 
-	public int quantity;
+	public int quantity; 
 
 	public CartBean() {
 	}
