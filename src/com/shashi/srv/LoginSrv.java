@@ -84,7 +84,12 @@ public class LoginSrv extends HttpServlet {
         return MessageDigest.isEqual(storedAdminPasswordHash.getBytes(), hashPassword(password).getBytes())
                 && "admin@gmail.com".equals(userName);
     }
+    public class PasswordHashingException extends RuntimeException {
 
+    public PasswordHashingException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
     private String hashPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -95,7 +100,7 @@ public class LoginSrv extends HttpServlet {
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Error hashing password", e);
+            throw new PasswordHashingException("Error hashing password", e);
         }
     }
 }
