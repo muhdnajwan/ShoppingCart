@@ -46,12 +46,16 @@
 				enctype="multipart/form-data" class="col-md-6 col-md-offset-3"
 				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
 				<div style="font-weight: bold;" class="text-center">
-				    <h2 style="color: green;">Product Addition Form</h2>
-				    <c:if test="${not empty message}">
-				        <p style="color: blue;">
-				            <c:out value="${message}" />
-				        </p>
-				    </c:if>
+					<h2 style="color: green;">Product Addition Form</h2>
+					<%
+					if (message != null) {
+					%>
+					<p style="color: blue;">
+						<%=message%>
+					</p>
+					<%
+					}
+					%>
 				</div>
 				<div></div>
 				<div class="row">
